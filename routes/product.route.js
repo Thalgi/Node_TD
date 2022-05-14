@@ -5,10 +5,14 @@ export function routes(controller) {
 
     route.get('/', (req, res) => controller.getAll(req, res));
 
+    route.get('/search/:title', (req, res) => controller.search(req, res));
+
     route.get('/delete/:id', (req, res) => controller.delete(req, res));
 
     route.get('/edit/:id', (req, res) => controller.edit(req, res));
     route.post('/update/:id', (req, res) => controller.update(req, res));
+
+
 
     route.get('/createOne', (req, res) => controller.createOne(req, res));
     route.post('/create', (req, res) => controller.create(req, res));

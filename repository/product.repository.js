@@ -65,14 +65,17 @@ export class ProductRepository {
         });
     }
 
+    search(title) {
+        return new Promise((resolve, reject) => {
+            ProductModel.find({ title: title }, (err, products) => {
+                //console.log("getREPO", products);
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(products.map(p => p.toObject()))
+                }
+            });
+        });
+    }
 
-
-    // update(id, product) {
-    //         return new Promise((resolve, _reject) => {
-    //                 const produit_a_changer = {...product,
-    //                     id
-    //                 };
-    //                 resolve(this.products.map((p) =>
-    //                 });
-    //             }
 }

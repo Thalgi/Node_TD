@@ -77,4 +77,16 @@ export class ProductController {
                 console.log("Getone_ERR :", error)
             })
     }
+
+    search(req, res) {
+        this.repository.search(req.body)
+            .then(() => {
+                res.render('/index', { products: products })
+            })
+            .catch((error) => {
+                res.render('/index', { products: null })
+                console.log("Create_ERR :", error)
+            })
+    }
+
 }
