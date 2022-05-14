@@ -1,0 +1,44 @@
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+
+
+{{title}}
+
+<h4>Edition produit :</h4>
+
+<form class="row g-3 needs-validation" novalidate action="/update/{{product._id}}" method="post">
+  <div class="col-md-4">
+    <label for="name" class="form-label">Nom produit:</label>
+    <input type="text" class="form-control" id="name" name="name" value="{{product.name}}" required>
+    <div class="valid-feedback">
+     Parfait ! ✅
+    </div>
+  </div>
+  <div class="col-md-8">
+    <label for="desc" class="form-label">Description</label>
+    <input type="text" class="form-control" id="desc" name="description" value="{{product.description}}" required>
+    <div class="valid-feedback">
+      Parfait ! ✅
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="var" class="form-label">Variété</label>
+    <input type="text" class="form-control" id="var" name="variete" value="{{product.variete}}" required>
+    <div class="invalid-feedback">
+      Indiquer une variété
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="quantity" class="form-label">Quantité</label>
+    <input id="quantity" class="form-control" type="number" id="qty" name="qty" value="{{product.qty}}" required>
+    <div class="invalid-feedback">
+      Indiquer la quantité
+    </div>
+  </div>
+  <div class="col-12">
+    
+  </div>
+  <div class="col-12 card-body">
+               <button class="btn btn-success card-link" type="submit" value="OK">Valider ✅</button>
+                <a class="card-link btn btn-light" href="/">❌ Retour </a>
+        </div>
+</form>

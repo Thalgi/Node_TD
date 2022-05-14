@@ -1,0 +1,29 @@
+{{title}}
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {{#each products as |product|}}
+    <div class="col">
+        <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{product.variete}}</h6>
+                <p class="card-text">{{product.description}}</p>
+                <div class="d-grid d-md-block">
+                    <a class="btn btn-light" href="/{{product._id}}" class="card-link">Détails</a>
+                    <a class="btn btn-light" href="/delete/{{product._id}}" class="card-link">🗑</a>
+
+                </div>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Qauntité : {{product.qty}}</small>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+
+<div class="d-grid gap-2">
+    <a class="btn btn-primary" href="/createOne">Creer un produit</a>
+</div>
