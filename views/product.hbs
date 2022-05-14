@@ -1,0 +1,18 @@
+{{title}}
+ 
+
+<div class="card" style="">
+        <div class="card-body">
+                <h1 class="card-title"> <strong>{{product.name}} </strong></h1>
+                <p class="card-text">{{product.description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item">Variété : {{product.variete}}</li>
+                <li class="list-group-item">Quantité: {{product.qty}}</li>
+                <li class="list-group-item">ID produit : {{product._id}}</li>
+        </ul>
+        <div class="card-body">
+                <a class="card-link btn btn-light" href="/edit/{{product._id}}"> ✅Editer le produit </a>
+                <a class="card-link btn btn-light" href="/">❌ Retour </a>
+        </div>
+</div>
